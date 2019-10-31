@@ -5,9 +5,33 @@
   font-weight: normal;
   font-style: normal;
 }
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.fontstyleP {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+blockquote,
+ul {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 html,
 body {
-  min-width: 1280px;
+  width: 1280px;
   height: 100%;
   margin: 0 auto;
   font-family: Arial, MyriadPro, sans-serif;
@@ -72,24 +96,38 @@ header p:before {
 }
 #aboutProduct h2 {
   margin-top: 49px;
+  margin-bottom: 30px;
   padding-left: 50px;
   font-weight: 300;
   float: left;
 }
 #aboutProduct h2,
-#dignityPluses h3 {
+#dignityPluses h3,
+#screenshots h3,
+#reviews h3,
+#buyIt h3 {
   font-size: 30px;
   color: #445161;
   line-height: 30px;
   font-weight: 300;
 }
+#dignityPluses:after,
+#screenshots:after,
+#reviews:after,
+#buyIt:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 #aboutProduct p {
-  font-size: 16px;
   width: 649px;
-  color: #333333;
   padding-left: 50px;
   margin-top: 20px;
   clear: left;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
 }
 #aboutProduct p:first-child {
   margin-top: 20px;
@@ -97,11 +135,15 @@ header p:before {
 #dignityPluses {
   min-height: 415px;
   background-color: #f5f5f5;
-  margin-bottom: 50px;
 }
-#dignityPluses h3 {
+#dignityPluses h3,
+#screenshots h3,
+#reviews h3 {
   padding-top: 50px;
   text-align: center;
+}
+#screenshots h3 {
+  padding-bottom: 34px;
 }
 #dignityPluses ul {
   display: block;
@@ -116,6 +158,95 @@ header p:before {
   background-repeat: no-repeat;
   float: left;
   width: 558px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
+}
+#screenshots {
+  margin-bottom: 19px;
+  padding: 0px 50px 0px 50px;
+}
+#screenshots article {
+  width: 49%;
+  float: left;
+  margin-bottom: 30px;
+}
+#screenshots article h4 {
+  font-size: 24px;
+  color: #445161;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
+#screenshots img {
+  float: left;
+  width: 200px;
+  height: 150px;
+  margin-right: 15px;
+}
+#screenshots p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: left;
+}
+#screenshots article:nth-child(even) {
+  margin-right: 15px;
+}
+#reviews {
+  background-color: #f5f5f5;
+  padding: 0px 50px 51px 50px;
+}
+#reviews h3 {
+  margin-bottom: 35px;
+}
+#reviews blockquote {
+  background-color: #ebebeb;
+  position: relative;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  text-align: left;
+  font-style: italic;
+  margin-left: 107px;
+}
+#reviews cite {
+  display: block;
+  color: #989898;
+  margin-top: 15px;
+}
+#reviews blockquote:after {
+  content: " ";
+  background-color: #ebebeb;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  left: -15px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+.arrow-fix {
+  position: relative;
+  z-index: 5;
+}
+#reviews img {
+  position: absolute;
+  float: left;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+#reviews ul li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  width: 49%;
+  margin-bottom: 24px;
+}
+#reviews ul li:nth-child(odd) {
+  margin-right: 15px;
 }
 footer {
   height: 535px;
