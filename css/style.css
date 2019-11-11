@@ -179,3 +179,28 @@ td,
 th {
   padding: 0;
 }
+html,
+body {
+  min-height: 100%;
+  width: 1300px;
+  display: grid;
+  grid-template-rows: 195px 1fr 927px;
+  grid-template-columns: minmax(1300px, 100%);
+}
+header,
+footer,
+main {
+  width: 100%;
+  outline: 2px solid black;
+}
+header {
+  display: grid;
+  background-color: yellow;
+  grid-template-columns: 203px 350px 1fr 1fr 1fr 185px;
+  grid-templare-rows: 105px 90px;
+  grid-template-areas: ". logo worktime address phone ." ".nav     nav     nav    nav.";
+}
+#navbar {
+  grid-area: nav;
+  display: inline-grid;
+}
