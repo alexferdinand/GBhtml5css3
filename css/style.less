@@ -1,30 +1,261 @@
     @import 'bootstrap3/less/normalize.less';
+    @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
+    @logoWidth: 400px;
+    @marginHeader: 185px;
+    @paddingsRL: 220px;
+    ////////////////////////////// FONTS ///////////////////////////////////////
+
+    html,
+    body {
+        font-size: .8vw;
+    }
+
+    h1,
+    h2 {
+        font-family: "Montserrat", serif;
+    }
+
+    .worktime,
+    address,
+    .phone {
+        font-family: OpenSans-Bold, sans-serif;
+
+        & em {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-style: normal;
+
+        }
+    }
+
+    .navbar menu li {
+        font-family: "Montserrat", serif;
+        font-size: 1.0rem;
+        font-weight: 400;
+
+        & a {
+            text-decoration: none;
+            color: #bababa;
+        }
+    }
+
+    .ads {
+        color: rgba(71, 71, 71, 255);
 
 
-html, body {    
-  min-height:100%;
-  width: 1300px;
-  display:grid;
-  grid-template-rows: 195px 1fr 927px;
-  grid-template-columns: minmax(1300px, 100%);
-}
+        & h1 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-align: center;
+            line-height: 150%;
+        }
 
-header, footer, main {
-  width: 100%;
-  outline: 2px solid black;
-}
+        & div {
+            text-align: center;
+            font-size: .8vw;
+            line-height: 180%;
+        }
+    }
 
-header  {
-display: grid;
-background-color:yellow;
-grid-template-columns: 203px 350px 1fr 1fr 1fr 185px;
-grid-templare-rows: 105px 90px;
-grid-template-areas:
-". logo worktime address phone ." 
- ".nav     nav     nav    nav."
-}
+    .features {
 
-#navbar {
-  grid-area:nav;
-  display:inline-grid;
+        & article {
+            text-align: center;
+            color: #fff;
+        }
+
+        & article h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////
+
+    h1,
+    h2 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    html,
+    body {
+        min-height: 100%;
+        width: 1600px;
+        display: grid;
+        margin: 0 auto;
+        grid-template-rows: 210px 1fr 927px;
+        grid-template-columns: minmax(1300px, 100%);
+    }
+
+    .paddings () {
+        padding-left: @paddingsRL;
+        padding-right: @paddingsRL;
+    }
+
+    header,
+    footer,
+    main {
+        width: 100%;
+    }
+
+    header .wrap {
+        display: grid;
+        margin: 0 @marginHeader 0 @marginHeader;
+        grid-template-columns: @logoWidth 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 105px);
+        grid-gap: 0px;
+        grid-template-areas:
+            "logo worktime address phone "
+            "nav  nav       nav      nav ";
+        align-items: center;
+        justify-items: right;
+
+    }
+
+    header .navbar {
+        border-top: 1px solid #ececec;
+        grid-area: nav;
+        height: 100%;
+        justify-self: stretch;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 3fr 1fr;
+    }
+
+
+    .navbar menu {
+        padding-left: 0px;
+        align-self: center;
+    }
+
+    .navbar menu li {
+        grid-area: nav;
+        display: inline-block;
+        margin-right: 30px;
+    }
+
+    .logo {
+        grid-area: logo;
+        justify-self: left;
+    }
+
+    .sociallink {
+        align-self: center;
+    }
+
+
+    main {
+        display: grid;
+        grid-template-rows: 640px repeat(6, auto);
+        grid-template-columns: 1fr;
+    }
+
+    .ads {
+        background-image: url(../img/ads-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 640px;
+        position: relative;
+
+        & h1 {
+            position: relative;
+            width: 23vw;
+            top: 190px;
+            left: 280px;
+            margin-bottom: 0.5rem;
+
+        }
+
+        & div {
+            position: relative;
+            width: 18vw;
+            top: 190px;
+            left: 334px;
+        }
+    }
+
+    .features {
+        display: grid;
+        grid-template-rows: 360px;
+        grid-template-columns: repeat(4, 1fr);
+
+        & article {
+            padding: 75px 40px 0px 40px;
+        }
+
+        & article:nth-child(1) {
+            background-color: #43b1d2;
+        }
+
+        & article:nth-child(2) {
+            background-color: #3fb6c6;
+        }
+
+        & article:nth-child(3) {
+            background-color: #3cbbbb;
+        }
+
+        & article:nth-child(4) {
+            background-color: #37c3a8;
+        }
+
+        & article h2 {
+            margin-top: 100px;
+        }
+    }
+
+    .chooseUs {
+        display: grid;
+        grid-template-rows: 260px 300px 300px;
+        grid-template-columns: 1fr 337px 1fr;
+        .paddings();
+
+        & article {
+            align-self: center;
+        }
+
+        & article:nth-child(1) {
+            grid-row: 1/span 1;
+            grid-column: 1/span 3;
+            padding: 0px 20% 0 20%;
+            text-align: center;
+        }
+
+        & article:nth-child(2),
+        & article:nth-child(5) {
+            padding-right: 43px;
+        }
+
+        /*
+
+        & article:nth-child(3) {}
+
+        & article:nth-child(4) {}
+
+        & article:nth-child(5) {}
+*/
+
+
+        & div {
+            grid-row: 2/span 2;
+            grid-column-start: 2;
+        }
+    }
+
+    .achievements {
+        display: grid;
+        grid-template-rows: 595px;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        .paddings();
+        justify-items: center;
+        background: url(../img/achivements-bg.png) no-repeat;
+        background-color: #0081bb;
+        background-blend-mode: screen;
+    }
+
+    .howWeWorks {
+        
 }
