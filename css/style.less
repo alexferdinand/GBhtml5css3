@@ -3,6 +3,8 @@
     @logoWidth: 400px;
     @marginHeader: 185px;
     @paddingsRL: 220px;
+    @pageWidth: 1600px;
+
     ////////////////////////////// FONTS ///////////////////////////////////////
 
     html,
@@ -82,7 +84,7 @@
     html,
     body {
         min-height: 100%;
-        width: 1600px;
+        width: @pageWidth;
         display: grid;
         margin: 0 auto;
         grid-template-rows: 210px 1fr 927px;
@@ -149,7 +151,7 @@
     main {
         display: grid;
         grid-template-rows: 640px repeat(6, auto);
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
 
     .ads {
@@ -228,15 +230,6 @@
             padding-right: 43px;
         }
 
-        /*
-
-        & article:nth-child(3) {}
-
-        & article:nth-child(4) {}
-
-        & article:nth-child(5) {}
-*/
-
 
         & div {
             grid-row: 2/span 2;
@@ -257,5 +250,80 @@
     }
 
     .howWeWorks {
-        
-}
+        .paddings();
+        display: grid;
+        grid-template-rows: 250px 345px 140px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "headWide headWide headNarrow"
+            "article1 article2 accordeon"
+            ".        submit    .     ";
+        grid-row-gap: 52px;
+        grid-column-gap: 32px;
+
+        & .headWide {
+            grid-area: headWide;
+            align-self: baseline;
+            padding-top: 98px;
+        }
+
+        & .headNarrow {
+            grid-area: headNarrow;
+            align-self: baseline;
+            padding-top: 98px;
+        }
+
+        & .accordeon {
+            grid-area: accordeon;
+        }
+    }
+
+    .gallery {
+        min-height: 829px;
+        .paddings();
+        display: grid;
+        justify-content: center;
+        grid-template-rows: repeat(3, 212px);
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 36px;
+        grid-column-gap: 32px;
+        background: url(../img/gallery-bg.png) no-repeat;
+        background-color: #2fb39b;
+        background-blend-mode: screen;
+
+        & .head {
+            grid-column: 1/span 3;
+            text-align: center;
+            align-self: center;
+        }
+
+        & img {
+            display: block;
+            height: 210px;
+            width: 345px;
+            object-fit: cover;
+            justify-self: center;
+        }
+    }
+
+    .team {
+        min-height: 829px;
+        .paddings();
+        display: grid;
+        justify-content: center;
+        grid-template-rows: repeat (2, 341px);
+        grid-template-columns: repeat(4, 279px);
+        grid-column-gap: 28px;
+
+        & .head {
+            grid-column: 1/span 4;
+            text-align: center;
+            align-self: center;
+        }
+
+        & img {
+            display: block;
+            border-radius: 50%;
+        }
+    }
+

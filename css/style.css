@@ -289,7 +289,7 @@ header .navbar {
 main {
   display: grid;
   grid-template-rows: 640px repeat(6, auto);
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
 }
 .ads {
   background-image: url(../img/ads-bg.png);
@@ -340,14 +340,6 @@ main {
   grid-template-columns: 1fr 337px 1fr;
   padding-left: 220px;
   padding-right: 220px;
-  /*
-
-        & article:nth-child(3) {}
-
-        & article:nth-child(4) {}
-
-        & article:nth-child(5) {}
-*/
 }
 .chooseUs article {
   align-self: center;
@@ -377,4 +369,68 @@ main {
   background: url(../img/achivements-bg.png) no-repeat;
   background-color: #0081bb;
   background-blend-mode: screen;
+}
+.howWeWorks {
+  padding-left: 220px;
+  padding-right: 220px;
+  display: grid;
+  grid-template-rows: 250px 345px 140px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "headWide headWide headNarrow" "article1 article2 accordeon" ".        submit    .     ";
+  grid-row-gap: 52px;
+  grid-column-gap: 32px;
+}
+.howWeWorks .headWide {
+  grid-area: headWide;
+  align-self: baseline;
+  padding-top: 98px;
+}
+.howWeWorks .headNarrow {
+  grid-area: headNarrow;
+  align-self: baseline;
+  padding-top: 98px;
+}
+.howWeWorks .accordeon {
+  grid-area: accordeon;
+}
+.gallery {
+  min-height: 829px;
+  padding-left: 220px;
+  padding-right: 220px;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(3, 212px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 36px;
+  grid-column-gap: 32px;
+  background: url(../img/gallery-bg.png) no-repeat;
+  background-color: #2fb39b;
+  background-blend-mode: screen;
+}
+.gallery .head {
+  grid-column: 1 / span 3;
+  text-align: center;
+  align-self: center;
+}
+.gallery img {
+  display: block;
+  height: 210px;
+  width: 345px;
+  object-fit: cover;
+  justify-self: center;
+}
+.team {
+  min-height: 829px;
+  padding-left: 220px;
+  padding-right: 220px;
+  display: grid;
+  grid-template-rows: auto 341px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 36px;
+  grid-column-gap: 32px;
+}
+.team .head {
+  grid-column: 1 / span 4;
+  text-align: center;
+  align-self: center;
 }
