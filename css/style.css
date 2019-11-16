@@ -232,6 +232,16 @@ address em,
   font-size: 1.8rem;
   font-weight: 900;
 }
+.team .doctor-card a {
+  margin-right: 0.2rem;
+  font-size: 1.5rem;
+  display: inline-block;
+  vertical-align: bottom;
+  color: #0087be;
+}
+.team .doctor-card a:nth-child(2) {
+  font-weight: 700;
+}
 h1,
 h2 {
   margin-block-start: 0;
@@ -428,6 +438,7 @@ main {
   grid-template-rows: repeat(2, 341px);
   grid-template-columns: repeat(4, 279px);
   grid-column-gap: 28px;
+  justify-items: center;
 }
 .team .head {
   grid-column: 1 / span 4;
@@ -437,4 +448,36 @@ main {
 .team img {
   display: block;
   border-radius: 50%;
+  width: 279px;
+  height: 279px;
+}
+.team .doctor-card span,
+.team .doctor-card {
+  display: block;
+  text-align: center;
+}
+.team .doctor-social {
+  margin-top: 1.5rem;
+}
+footer {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 176px 1fr 130px;
+  grid-template-columns: 220px repeat(4, 1fr) 220px;
+  grid-template-areas: ". offer offer offer offer ." ". address nav services enquiry. " ". . copyright copyright . .";
+}
+footer .offer {
+  grid-area: offer;
+}
+footer address {
+  grid-area: address;
+}
+footer nav {
+  grid-area: nav;
+}
+footer .services {
+  grid-area: services;
+}
+footer .enquiry {
+  grid-area: enquiry;
 }
