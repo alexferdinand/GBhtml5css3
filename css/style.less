@@ -1,5 +1,6 @@
     @import 'bootstrap3/less/normalize.less';
     @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap');
     @logoWidth: 400px;
     @marginHeader: 185px;
     @paddingsRL: 220px;
@@ -10,21 +11,29 @@
 
     html,
     body {
-        font-size: .8vw;
+        font-size: 18px;
     }
 
     h1,
     h2 {
-        font-family: "Montserrat", serif;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    header .sociallink a {
+        color: #191919;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
     }
 
     .worktime,
-    address,
-    .phone {
+    header address,
+    header .phone {
         font-family: OpenSans-Bold, sans-serif;
+        font-size: 0.7rem;
 
         & em {
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             font-style: normal;
@@ -59,6 +68,25 @@
             font-size: .8vw;
             line-height: 180%;
         }
+
+        & button {
+            font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
+            color: #fff;
+            font-size: 1.0rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            width: 166px;
+            height: 47px;
+            border-radius: 23px;
+            border: 0px;
+            box-shadow: 5px 5px 5px 5px #d2d2d2;
+            background-color: #0087be;
+            text-align: center;
+            line-height: 0;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 40px;
+        }
     }
 
     .features {
@@ -66,13 +94,174 @@
         & article {
             text-align: center;
             color: #fff;
+            line-height: 1.5rem;
         }
 
         & article h2 {
             font-size: 1.8rem;
-            font-weight: 900;
+            font-weight: bold;
+            margin-bottom: 1.3rem;
+        }
+
+        & article:first-child {
+            background: url(/img/feature-scope.png) no-repeat;
+            background-position: center 80px;
+        }
+
+        & article:nth-child(2) {
+            background: url(/img/feature-phone.png) no-repeat;
+            background-position: center 80px;
+        }
+
+        & article:nth-child(3) {
+            background: url(/img/feature-nurse.png) no-repeat;
+            background-position: center 80px;
+        }
+
+        & article:last-child {
+            background: url(/img/feature-car.png) no-repeat;
+            background-position: center 80px;
         }
     }
+
+
+    .chooseUs {
+        color: rgba(106, 106, 106, 255);
+
+
+        & h1 {
+            color: #494949;
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 1.7rem;
+
+        }
+
+        & h2 {
+            margin: 1.3rem 0;
+            height: 75px;
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 5.8rem;
+        }
+
+        & article {
+            align-self: center;
+            line-height: 200%;
+        }
+
+        & article:nth-child(2) h2 {
+            background: url(/img/choose-star.png) no-repeat;
+        }
+
+        & article:nth-child(3) {
+            background: url(/img/choose-micro.png) no-repeat;
+        }
+
+        & article:nth-child(5) {
+            background: url(/img/choose-pill.png) no-repeat;
+        }
+
+        & article:nth-child(6) {
+            background: url(/img/choose-atom.png) no-repeat;
+        }
+
+
+
+
+
+
+        & div {
+            grid-row: 2/span 2;
+            grid-column-start: 2;
+        }
+    }
+
+    .achievements {
+        color: #fff;
+
+        & section {
+            text-align: center;
+            color: #fff;
+            line-height: 1.5rem;
+            padding-top: 4.5rem;
+
+            & h3 {
+                font-size: 3rem;
+            }
+
+            & div {
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+
+            &:nth-child(1) {
+                background: url(/img/achivements-hands.png) no-repeat;
+                background-position: center top;
+            }
+
+            &:nth-child(2) {
+                background: url(/img/achivements-heart.png) no-repeat;
+                background-position: center top;
+            }
+
+            &:nth-child(3) {
+                background: url(/img/achivements-heli.png) no-repeat;
+                background-position: center top;
+            }
+
+            &:nth-child(4) {
+                background: url(/img/achivements-lungs.png) no-repeat;
+                background-position: center top;
+            }
+        }
+
+        & hr {
+            width: 60%;
+            height: 5px;
+            border: none;
+            color: #fff;
+            background-color: #fff;
+        }
+    }
+
+    .howWeWorks {
+
+        & button {
+            font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
+            color: #fff;
+            font-size: 1.0rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            width: 154px;
+            height: 43px;
+            border-radius: 20px;
+            border: 0px;
+            box-shadow: 0px 0px 2px 2px #d2d2d2;
+            background-color: #0087be;
+            text-align: center;
+            line-height: 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        & .headWide {
+            grid-area: headWide;
+            align-self: baseline;
+            padding-top: 98px;
+        }
+
+        & .headNarrow {
+            grid-area: headNarrow;
+            align-self: baseline;
+            padding-top: 98px;
+        }
+
+        & .accordeon {
+            grid-area: accordeon;
+        }
+    }
+
 
     .team {
         & .doctor-card a {
@@ -95,14 +284,40 @@
 
         & .offer {
             background-color: #e2e2e2;
+            text-align: center;
+            padding-top: 85px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+
+            & button {
+                font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
+                color: #fff;
+                font-size: 1.3rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                width: 192px;
+                height: 54px;
+                border-radius: 27px;
+                border: 0px;
+                box-shadow: 5px 5px 5px 5px #d2d2d2;
+                background-color: #0087be;
+                text-align: center;
+                line-height: 0;
+                text-decoration: none;
+                display: inline-block;
+                margin-left: 2rem;
+            }
         }
+
+
 
         & address {
 
             & menu {
                 margin: 0px;
                 padding: 0px;
-                color: #9c9c9c;
+
 
                 & li {
                     margin: 30px 0px 0px 0px;
@@ -112,6 +327,7 @@
                     display: block;
                     line-height: 1.5rem;
                     font-style: normal;
+
                 }
 
                 & .email,
@@ -125,16 +341,16 @@
                         float: left;
                         font-size: 2.8rem;
                         font-weight: 200;
-                        margin-right: 1.0rem;
+                        margin-right: 1.3rem;
                     }
                 }
             }
-            
+
             & .socials i {
-                margin-top: 30px; 
-                color:#fff;
+                margin-top: 30px;
+                color: #fff;
                 font-size: 1.3rem;
-                margin-right: 1rem;
+                margin-right: 1.0rem;
             }
         }
 
@@ -153,12 +369,17 @@
                 background: url('../img/list-style.png') no-repeat;
                 padding-left: 30px;
             }
+
+            & li a {
+                color: #9c9c9c;
+                text-decoration: none;
+            }
         }
 
         & .enquiry {}
 
         & .copyright {
-            color:#615555;
+            color: #615555;
             font-size: .8rem;
         }
 
@@ -203,6 +424,8 @@
         width: 100%;
     }
 
+
+
     header .wrap {
         display: grid;
         margin: 0 @marginHeader 0 @marginHeader;
@@ -242,7 +465,35 @@
     .logo {
         grid-area: logo;
         justify-self: left;
+
     }
+
+    .worktime,
+    header address,
+    header .phone {
+        display: table;
+        width: 100%;
+
+        & div {
+            display: table-cell;
+            vertical-align: middle;
+            height: 3.0rem;
+            padding-left: 3.0rem;
+        }
+    }
+
+    .worktime {
+        background: url(../img/worktime-circle.png) no-repeat;
+    }
+
+    header .phone {
+        background: url(../img/callus.png) no-repeat;
+    }
+
+    header address {
+        background: url(../img/mailus.png) no-repeat;
+    }
+
 
     .sociallink {
         align-self: center;
@@ -313,7 +564,9 @@
         display: grid;
         grid-template-rows: 260px 300px 300px;
         grid-template-columns: 1fr 337px 1fr;
+        grid-column-gap: 3.3rem;
         .paddings();
+        padding-top: 4.5rem;
 
         & article {
             align-self: center;
@@ -324,11 +577,6 @@
             grid-column: 1/span 3;
             padding: 0px 20% 0 20%;
             text-align: center;
-        }
-
-        & article:nth-child(2),
-        & article:nth-child(5) {
-            padding-right: 43px;
         }
 
 
@@ -347,7 +595,7 @@
         justify-items: center;
         background: url(../img/achivements-bg.png) no-repeat;
         background-color: #0081bb;
-        background-blend-mode: screen;
+        background-blend-mode: soft-light;
     }
 
     .howWeWorks {
@@ -358,9 +606,10 @@
         grid-template-areas:
             "headWide headWide headNarrow"
             "article1 article2 accordeon"
-            ".        submit    .     ";
+            "readmore  readmore   .  ";
         grid-row-gap: 52px;
         grid-column-gap: 32px;
+        //height: 50rem;
 
         & .headWide {
             grid-area: headWide;
@@ -377,6 +626,13 @@
         & .accordeon {
             grid-area: accordeon;
         }
+
+        & .readmore {
+            grid-area: readmore;
+            justify-self: center;
+        }
+
+
     }
 
     .gallery {
@@ -452,6 +708,7 @@
 
         & .offer {
             grid-area: offer;
+            color: #494949;
         }
 
         & address {
@@ -472,17 +729,46 @@
         & .enquiry {
             grid-area: enquiry;
             padding-left: 3rem;
-            
-            & input:not([type="submit"]), textarea {
-                width:15rem;
+
+            & input:not([type="submit"]),
+            textarea {
+                width: 15rem;
                 height: 3rem;
                 border: 0px #171717;
                 background-color: #171717;
-                border-bottom: 2px  solid #5f5f5f;
+                border-bottom: 2px solid #5f5f5f;
                 
+
             }
-            & input:not([type="text"]), textarea {
-                margin-bottom: 30px;
+
+            & input[type="tel"] {
+                margin-bottom: 50px;
+            }
+
+            & input[type="text"] {
+                margin-bottom: 15px;
+                margin-top: -15px;
+            }
+
+            & textarea {
+                margin-bottom: 15px;
+            }
+
+            & input[type="submit"] {
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                width: 7.5rem;
+                height: 2.5rem;
+                border-radius: 1.5rem;
+                border: 0px;
+                box-shadow: 0 0px 0px 0px #0087be;
+                background-color: #0087be;
+                text-align: center;
+                line-height: 0;
+                text-decoration: none;
+                display: inline-block;
             }
 
         }
