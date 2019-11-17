@@ -242,6 +242,67 @@ address em,
 .team .doctor-card a:nth-child(2) {
   font-weight: 700;
 }
+footer {
+  background-color: #171717;
+  color: #fff;
+}
+footer .offer {
+  background-color: #e2e2e2;
+}
+footer address menu {
+  margin: 0px;
+  padding: 0px;
+  color: #9c9c9c;
+}
+footer address menu li {
+  margin: 30px 0px 0px 0px;
+  width: 100%;
+  list-style-type: none;
+  height: 4rem;
+  display: block;
+  line-height: 1.5rem;
+  font-style: normal;
+}
+footer address menu .email i,
+footer address menu .phone i,
+footer address menu .post i {
+  display: block;
+  width: 3.0rem;
+  float: left;
+  font-size: 2.8rem;
+  font-weight: 200;
+  margin-right: 1.0rem;
+}
+footer address .socials i {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+footer nav menu,
+footer .services menu {
+  padding: 0px;
+  margin: 0px;
+  color: #9c9c9c;
+}
+footer nav menu li,
+footer .services menu li {
+  list-style-type: none;
+  display: block;
+  height: 42px;
+  background: url('../img/list-style.png') no-repeat;
+  padding-left: 30px;
+}
+footer .copyright {
+  color: #615555;
+  font-size: .8rem;
+}
+footer h3 {
+  font-family: OpenSans, sans-serif;
+  font-style: normal;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
 h1,
 h2 {
   margin-block-start: 0;
@@ -461,10 +522,9 @@ main {
 }
 footer {
   display: grid;
-  justify-content: center;
   grid-template-rows: 176px 1fr 130px;
   grid-template-columns: 220px repeat(4, 1fr) 220px;
-  grid-template-areas: ". offer offer offer offer ." ". address nav services enquiry. " ". . copyright copyright . .";
+  grid-template-areas: "offer offer offer offer offer offer" ". address nav services enquiry . " ". . copyright copyright . .";
 }
 footer .offer {
   grid-area: offer;
@@ -474,10 +534,35 @@ footer address {
 }
 footer nav {
   grid-area: nav;
+  justify-self: center;
 }
 footer .services {
   grid-area: services;
+  justify-self: center;
 }
 footer .enquiry {
   grid-area: enquiry;
+  padding-left: 3rem;
+}
+footer .enquiry input:not([type="submit"]),
+footer .enquiry textarea {
+  width: 15rem;
+  height: 3rem;
+  border: 0px #171717;
+  background-color: #171717;
+  border-bottom: 2px  solid #5f5f5f;
+}
+footer .enquiry input:not([type="text"]),
+footer .enquiry textarea {
+  margin-bottom: 30px;
+}
+footer .copyright {
+  grid-area: copyright;
+}
+footer address h3,
+footer .enquiry h3,
+footer nav h3,
+footer .services h3 {
+  margin-top: 114px;
+  margin-bottom: 75px;
 }
