@@ -479,6 +479,19 @@ footer h3 {
   font-size: 1.3rem;
   font-weight: 700;
 }
+.ads button:hover,
+.offer button:hover {
+  -moz-transform: rotate(45deg);
+  -webkit-transform: scale(1.2);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: scale(1.2);
+}
+header .phone div {
+  animation-duration: 1s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+}
 h1,
 h2 {
   margin-block-start: 0;
