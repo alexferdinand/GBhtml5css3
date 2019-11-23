@@ -284,7 +284,7 @@ header .phone em {
 }
 .chooseUs h1 {
   color: #494949;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 3rem;
   margin-bottom: 1.7rem;
 }
@@ -294,10 +294,13 @@ header .phone em {
   display: table-cell;
   vertical-align: middle;
   padding-left: 5.8rem;
+  font-size: 2.0rem;
+  font-weight: 700;
 }
 .chooseUs article {
   align-self: center;
   line-height: 200%;
+  font-size: 0.9rem;
 }
 .chooseUs article:nth-child(2) h2 {
   background: url(/img/choose-star.png) no-repeat;
@@ -310,10 +313,6 @@ header .phone em {
 }
 .chooseUs article:nth-child(6) {
   background: url(/img/choose-atom.png) no-repeat;
-}
-.chooseUs div {
-  grid-row: 2 / span 2;
-  grid-column-start: 2;
 }
 .achievements {
   color: #fff;
@@ -354,6 +353,12 @@ header .phone em {
   color: #fff;
   background-color: #fff;
 }
+.howWeWorks {
+  color: #6f6f6e;
+  font-weight: 400;
+  font-size: 1.0rem;
+  line-height: 200%;
+}
 .howWeWorks button {
   font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
   color: #fff;
@@ -371,18 +376,65 @@ header .phone em {
   text-decoration: none;
   display: inline-block;
 }
-.howWeWorks .headWide {
-  grid-area: headWide;
-  align-self: baseline;
-  padding-top: 98px;
-}
+.howWeWorks .headWide,
 .howWeWorks .headNarrow {
-  grid-area: headNarrow;
-  align-self: baseline;
-  padding-top: 98px;
+  color: #6a6a6a;
 }
-.howWeWorks .accordeon {
-  grid-area: accordeon;
+.howWeWorks .headWide h1,
+.howWeWorks .headNarrow h1 {
+  color: #494949;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1.7rem;
+}
+.howWeWorks .workArticle h4 {
+  color: #6f6f6e;
+  font-size: 1.2rem;
+  margin-top: 34px;
+  margin-bottom: 13px;
+}
+.howWeWorks .workArticle .date {
+  color: #0087be;
+  margin-bottom: 13px;
+  font-weight: 700;
+}
+.gallery {
+  color: #ffffff;
+}
+.gallery .head {
+  font-weight: 400;
+  font-size: 1.0rem;
+  line-height: 200%;
+}
+.gallery .head h1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+.team {
+  color: #6a6a6a;
+}
+.team .head {
+  font-weight: 400;
+  font-size: 1.0rem;
+  line-height: 200%;
+}
+.team .head h1 {
+  color: #494949;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1.7rem;
+}
+.team .doctor-card h5 {
+  color: #6f6f6e;
+  font-size: 1.2rem;
+  margin-top: 34px;
+  margin-bottom: 13px;
+}
+.team .doctor-card span {
+  color: #6f6f6e;
+  font-size: .8rem;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 .team .doctor-card a {
   margin-right: 0.2rem;
@@ -476,7 +528,8 @@ footer .copyright {
   color: #615555;
   font-size: .8rem;
 }
-footer h3 {
+footer h3,
+footer address .h3 {
   font-family: OpenSans, sans-serif;
   font-style: normal;
   font-size: 1.3rem;
@@ -503,7 +556,7 @@ h2 {
 html,
 body {
   min-height: 100%;
-  width: 1600px;
+  width: 100%;
   display: grid;
   margin: 0 auto;
   grid-template-rows: 210px 1fr 927px;
@@ -580,7 +633,7 @@ main {
 .ads {
   background-image: url(../img/ads-bg.png);
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   height: 640px;
   position: relative;
 }
@@ -650,15 +703,16 @@ main {
   padding-left: 220px;
   padding-right: 220px;
   justify-items: center;
-  background: url(../img/achivements-bg.png) no-repeat;
+  background: url(../img/achivements-bg.png) repeat-x;
   background-color: #0081bb;
+  background-position: center;
   background-blend-mode: soft-light;
 }
 .howWeWorks {
   padding-left: 220px;
   padding-right: 220px;
   display: grid;
-  grid-template-rows: 250px 345px 140px;
+  grid-template-rows: auto 1fr 140px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "headWide headWide headNarrow" "article1 article2 accordeon" "readmore  readmore   .  ";
   grid-row-gap: 52px;
@@ -690,15 +744,23 @@ main {
   grid-template-rows: repeat(3, 212px);
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 36px;
-  grid-column-gap: 32px;
-  background: url(../img/gallery-bg.png) no-repeat;
+  grid-column-gap: 2px;
+  background: url(../img/gallery-bg.png) repeat-x;
   background-color: #2fb39b;
+  background-position: center;
   background-blend-mode: screen;
+}
+.gallery .annotation {
+  margin-bottom: 54px;
 }
 .gallery .head {
   grid-column: 1 / span 3;
   text-align: center;
   align-self: center;
+}
+.gallery .head h1 {
+  margin-top: 95px;
+  margin-bottom: 38px;
 }
 .gallery img {
   display: block;
@@ -802,7 +864,11 @@ footer .copyright {
 footer address h3,
 footer .enquiry h3,
 footer nav h3,
-footer .services h3 {
+footer .services h3,
+footer address .h3,
+footer .enquiry .h3,
+footer nav .h3,
+footer .services .h3 {
   margin-top: 114px;
   margin-bottom: 75px;
 }
