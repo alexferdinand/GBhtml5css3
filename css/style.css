@@ -211,12 +211,15 @@ header .phone em {
 }
 .navbar menu li {
   font-family: "Montserrat", serif;
-  font-size: 1.0rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .navbar menu li a {
   text-decoration: none;
   color: #bababa;
+}
+.navbar menu li .active {
+  color: #000;
 }
 .ads {
   color: #474747;
