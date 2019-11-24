@@ -184,6 +184,7 @@ th {
 html,
 body {
   font-size: 18px;
+  overflow-x: hidden;
 }
 h1,
 h2 {
@@ -446,19 +447,15 @@ header .phone em {
 .team .doctor-card a:nth-child(2) {
   font-weight: 700;
 }
-footer {
-  background-color: #171717;
-  color: #fff;
-}
-footer .offer {
+.offer {
   background-color: #e2e2e2;
   text-align: center;
-  padding-top: 85px;
+  padding-top: 75px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
 }
-footer .offer button {
+.offer button {
   font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
   color: #fff;
   font-size: 1.3rem;
@@ -475,6 +472,10 @@ footer .offer button {
   text-decoration: none;
   display: inline-block;
   margin-left: 2rem;
+}
+footer {
+  background-color: #171717;
+  color: #fff;
 }
 footer address menu {
   margin: 0px;
@@ -555,21 +556,20 @@ h2 {
 }
 html,
 body {
-  min-height: 100%;
   width: 100%;
-  display: grid;
+}
+/*    .paddings () {
+        padding-left: @paddingsRL;
+        padding-right: @paddingsRL;
+    }*/
+header {
+  width: 100%;
+}
+.wrap {
+  width: 1300px;
   margin: 0 auto;
-  grid-template-rows: 210px 1fr 927px;
-  grid-template-columns: minmax(1300px, 100%);
-}
-header,
-footer,
-main {
-  width: 100%;
-}
-header .wrap {
   display: grid;
-  margin: 0 185px 0 185px;
+  justify-content: center;
   grid-template-columns: 400px 1fr 1fr 1fr;
   grid-template-rows: repeat(2, 105px);
   grid-gap: 0px;
@@ -626,9 +626,9 @@ header address {
   align-self: center;
 }
 main {
-  display: grid;
-  grid-template-rows: 640px repeat(6, auto);
-  grid-template-columns: 100%;
+  /*       display: grid;
+        grid-template-rows: 640px repeat(6, auto);
+        grid-template-columns: 1300px;*/
 }
 .ads {
   background-image: url(../img/ads-bg.png);
@@ -641,19 +641,21 @@ main {
   position: relative;
   width: 23vw;
   top: 190px;
-  left: 280px;
+  left: 480px;
   margin-bottom: 0.5rem;
 }
 .ads div {
   position: relative;
   width: 18vw;
   top: 190px;
-  left: 334px;
+  left: 534px;
 }
 .features {
   display: grid;
-  grid-template-rows: 360px;
+  grid-template-rows: 400px;
   grid-template-columns: repeat(4, 1fr);
+  width: 1300px;
+  margin: 0 auto;
 }
 .features article {
   padding: 75px 40px 0px 40px;
@@ -678,8 +680,8 @@ main {
   grid-template-rows: 260px 300px 300px;
   grid-template-columns: 1fr 337px 1fr;
   grid-column-gap: 3.3rem;
-  padding-left: 220px;
-  padding-right: 220px;
+  width: 1300px;
+  margin: 0 auto;
   padding-top: 4.5rem;
 }
 .chooseUs article {
@@ -695,22 +697,26 @@ main {
   grid-row: 2 / span 2;
   grid-column-start: 2;
 }
-.achievements {
-  display: grid;
-  grid-template-rows: 595px;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  padding-left: 220px;
-  padding-right: 220px;
-  justify-items: center;
+.achievments-wrap {
+  width: 100%;
   background: url(../img/achivements-bg.png) repeat-x;
   background-color: #0081bb;
   background-position: center;
   background-blend-mode: soft-light;
 }
+.achievements {
+  width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 595px;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
 .howWeWorks {
-  padding-left: 220px;
-  padding-right: 220px;
+  width: 1300px;
+  margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr 140px;
   grid-template-columns: repeat(3, 1fr);
@@ -735,20 +741,23 @@ main {
   grid-area: readmore;
   justify-self: center;
 }
+.gallery-wrap {
+  width: 100%;
+  background: url(../img/gallery-bg.png) repeat-x;
+  background-color: #2fb39b;
+  background-position: center;
+  background-blend-mode: screen;
+}
 .gallery {
   min-height: 829px;
-  padding-left: 220px;
-  padding-right: 220px;
+  width: 1300px;
+  margin: 0 auto;
   display: grid;
   justify-content: center;
   grid-template-rows: repeat(3, 212px);
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 36px;
   grid-column-gap: 2px;
-  background: url(../img/gallery-bg.png) repeat-x;
-  background-color: #2fb39b;
-  background-position: center;
-  background-blend-mode: screen;
 }
 .gallery .annotation {
   margin-bottom: 54px;
@@ -771,8 +780,6 @@ main {
 }
 .team {
   min-height: 829px;
-  padding-left: 220px;
-  padding-right: 220px;
   display: grid;
   justify-content: center;
   grid-template-rows: repeat(2, 341px);
@@ -800,49 +807,55 @@ main {
   margin-top: 1.5rem;
 }
 footer {
-  display: grid;
-  grid-template-rows: 176px 1fr 130px;
-  grid-template-columns: 220px repeat(4, 1fr) 220px;
-  grid-template-areas: "offer offer offer offer offer offer" ". address nav services enquiry . " ". . copyright copyright . .";
+  width: 100%;
 }
-footer .offer {
-  grid-area: offer;
+.offer {
   color: #494949;
+  height: 150px;
 }
-footer address {
+.footer {
+  display: grid;
+  justify-items: center;
+  width: 1300px;
+  margin: 0 auto;
+  grid-template-rows: 1fr 130px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "address nav services enquiry " " . copyright copyright . ";
+}
+.footer address {
   grid-area: address;
 }
-footer nav {
+.footer nav {
   grid-area: nav;
   justify-self: center;
 }
-footer .services {
+.footer .services {
   grid-area: services;
   justify-self: center;
 }
-footer .enquiry {
+.footer .enquiry {
   grid-area: enquiry;
   padding-left: 3rem;
 }
-footer .enquiry input:not([type="submit"]),
-footer .enquiry textarea {
+.footer .enquiry input:not([type="submit"]),
+.footer .enquiry textarea {
   width: 15rem;
   height: 3rem;
   border: 0px #171717;
   background-color: #171717;
   border-bottom: 2px solid #5f5f5f;
 }
-footer .enquiry input[type="tel"] {
-  margin-bottom: 50px;
+.footer .enquiry input[type="tel"] {
+  margin-bottom: 0px;
 }
-footer .enquiry input[type="text"] {
+.footer .enquiry input[type="text"] {
   margin-bottom: 15px;
   margin-top: -15px;
 }
-footer .enquiry textarea {
+.footer .enquiry textarea {
   margin-bottom: 15px;
 }
-footer .enquiry input[type="submit"] {
+.footer .enquiry input[type="submit"] {
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
@@ -858,17 +871,238 @@ footer .enquiry input[type="submit"] {
   text-decoration: none;
   display: inline-block;
 }
-footer .copyright {
+.footer .copyright {
   grid-area: copyright;
+  align-self: center;
 }
-footer address h3,
-footer .enquiry h3,
-footer nav h3,
-footer .services h3,
-footer address .h3,
-footer .enquiry .h3,
-footer nav .h3,
-footer .services .h3 {
+.footer address h3,
+.footer .enquiry h3,
+.footer nav h3,
+.footer .services h3,
+.footer address .h3,
+.footer .enquiry .h3,
+.footer nav .h3,
+.footer .services .h3 {
   margin-top: 114px;
   margin-bottom: 75px;
+}
+@media all and (min-width: 970px) and (max-width: 1299px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+  .wrap {
+    width: 970px;
+    margin: 0 auto;
+    grid-template-columns: 300px 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 105px);
+    grid-template-areas: "logo worktime address phone " "nav  nav       nav      nav ";
+  }
+  .logo img {
+    width: 152px;
+  }
+  .features {
+    width: 970px;
+    margin: 0 auto;
+  }
+  .features article {
+    padding: 55px 30px 0px 30px;
+    background-position: center 40px;
+  }
+  .features article h2 {
+    margin-top: 120px;
+  }
+  .chooseUs {
+    grid-template-columns: 1fr 249px 1fr;
+    grid-column-gap: 3.3rem;
+    width: 970px;
+    margin: 0 auto;
+    padding-top: 2.5rem;
+  }
+  .chooseUs article:nth-child(1) {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 3;
+    padding: 0px 20% 0 20%;
+    text-align: center;
+  }
+  .achievements {
+    width: 970px;
+    margin: 0 auto;
+  }
+  .achievements section {
+    line-height: 1.0rem;
+    padding-top: 3.5rem;
+  }
+  .achievements section h3 {
+    font-size: 2rem;
+  }
+  .achievements section div {
+    font-size: .8rem;
+    font-weight: 700;
+  }
+  .achievements hr {
+    height: 3px;
+  }
+  .howWeWorks {
+    width: 970px;
+    margin: 0 auto;
+    grid-template-rows: auto auto 1fr auto 140px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "headWide headWide" "headNarrow headNarrow " "article1 article2" "accordeon accordeon" "readmore  readmore  ";
+    grid-row-gap: 32px;
+    grid-column-gap: 12px;
+  }
+  .howWeWorks .headWide {
+    padding-top: 58px;
+  }
+  .howWeWorks .headNarrow {
+    padding-top: 58px;
+  }
+  .gallery {
+    width: 970px;
+    margin: 0 auto;
+    grid-template-rows: repeat(4, 220px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 16px;
+    grid-column-gap: 2px;
+    padding-bottom: 50px;
+  }
+  .gallery .annotation {
+    margin-bottom: 54px;
+  }
+  .gallery .head {
+    grid-column: 1 / span 2;
+    text-align: center;
+    align-self: center;
+  }
+  .gallery .head h1 {
+    margin-top: 95px;
+    margin-bottom: 38px;
+  }
+  .gallery img {
+    display: block;
+    height: 210px;
+    width: 345px;
+    object-fit: cover;
+    justify-self: center;
+  }
+  .team {
+    padding-top: 30px;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(2, 279px);
+    grid-row-gap: 28px;
+  }
+  .team .head {
+    grid-column: 1 / span 2;
+  }
+  .team img {
+    width: 200px;
+    height: 200px;
+  }
+  .offer {
+    background-color: #e2e2e2;
+    text-align: center;
+    padding-top: 35px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 100px;
+  }
+  .offer button {
+    font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
+    color: #fff;
+    font-size: 1.0rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 122px;
+    height: 34px;
+    border-radius: 17px;
+    border: 0px;
+    box-shadow: 5px 5px 5px 5px #d2d2d2;
+    background-color: #0087be;
+    text-align: center;
+    line-height: 0;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 2rem;
+  }
+  .footer {
+    width: 970px;
+    margin: 0 auto;
+    grid-template-rows: 1fr 1fr 130px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "services nav" "address enquiry" "copyright copyright";
+  }
+  .footer .enquiry {
+    grid-area: enquiry;
+    padding-left: 3rem;
+    justify-self: center;
+  }
+  .footer .enquiry input:not([type="submit"]),
+  .footer .enquiry textarea {
+    width: 15rem;
+    height: 3rem;
+    border: 0px #171717;
+    background-color: #171717;
+    border-bottom: 2px solid #5f5f5f;
+  }
+  .footer .enquiry input[type="tel"] {
+    margin-bottom: 50px;
+  }
+  .footer .enquiry input[type="text"] {
+    margin-bottom: 15px;
+    margin-top: -15px;
+  }
+  .footer .enquiry textarea {
+    margin-bottom: 15px;
+  }
+  .footer .enquiry input[type="submit"] {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 7.5rem;
+    height: 2.5rem;
+    border-radius: 1.5rem;
+    border: 0px;
+    box-shadow: 0 0px 0px 0px #0087be;
+    background-color: #0087be;
+    text-align: center;
+    line-height: 0;
+    text-decoration: none;
+    display: block;
+  }
+  .footer .copyright {
+    grid-area: copyright;
+    align-self: center;
+    justify-self: center;
+  }
+  .footer address h3,
+  .footer .enquiry h3,
+  .footer nav h3,
+  .footer .services h3,
+  .footer address .h3,
+  .footer .enquiry .h3,
+  .footer nav .h3,
+  .footer .services .h3 {
+    margin-top: 114px;
+    margin-bottom: 75px;
+  }
+}
+@media all and (max-width: 969px) {
+  html,
+  body {
+    background-color: aquamarine;
+    ont-size: 20px;
+  }
+  .wrap {
+    width: 750px;
+    margin: 0 auto;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 105px);
+    grid-template-areas: "logo worktime address phone " "nav  nav       nav      nav ";
+  }
+  .logo img {
+    width: 152px;
+  }
 }

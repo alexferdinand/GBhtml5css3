@@ -2,16 +2,17 @@
     @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
     @import url('https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap');
     @logoWidth: 400px;
-    @marginHeader: 185px;
-    @paddingsRL: 220px;
+    @marginHeader: 220px;
     @pageWidth: 100%;
     @doctorImg: 279px;
 
     ////////////////////////////// FONTS ///////////////////////////////////////
 
+
     html,
     body {
         font-size: 18px;
+        overflow-x: hidden;
     }
 
     h1,
@@ -99,6 +100,7 @@
             text-align: center;
             color: #fff;
             line-height: 1.5rem;
+
         }
 
         & article h2 {
@@ -335,40 +337,38 @@
         }
     }
 
+    .offer {
+        background-color: #e2e2e2;
+        text-align: center;
+        padding-top: 75px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+
+        & button {
+            font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            width: 192px;
+            height: 54px;
+            border-radius: 27px;
+            border: 0px;
+            box-shadow: 5px 5px 5px 5px #d2d2d2;
+            background-color: #0087be;
+            text-align: center;
+            line-height: 0;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+    }
+
     footer {
 
         background-color: #171717;
         color: #fff;
-
-        & .offer {
-            background-color: #e2e2e2;
-            text-align: center;
-            padding-top: 85px;
-            font-family: "Montserrat", sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-
-            & button {
-                font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
-                color: #fff;
-                font-size: 1.3rem;
-                font-weight: 900;
-                text-transform: uppercase;
-                width: 192px;
-                height: 54px;
-                border-radius: 27px;
-                border: 0px;
-                box-shadow: 5px 5px 5px 5px #d2d2d2;
-                background-color: #0087be;
-                text-align: center;
-                line-height: 0;
-                text-decoration: none;
-                display: inline-block;
-                margin-left: 2rem;
-            }
-        }
-
-
 
         & address {
 
@@ -476,7 +476,6 @@
 
     /////////////////////////////////////////////////////
 
-
     h1,
     h2 {
         margin-block-start: 0;
@@ -485,31 +484,28 @@
 
     html,
     body {
-        min-height: 100%;
         width: @pageWidth;
-        display: grid;
-        margin: 0 auto;
-        grid-template-rows: 210px 1fr 927px;
-        grid-template-columns: minmax(1300px, 100%);
     }
 
-    .paddings () {
+
+    /*    .paddings () {
         padding-left: @paddingsRL;
         padding-right: @paddingsRL;
+    }*/
+
+    .width() {
+        width: 1300px;
+        margin: 0 auto;
     }
 
-
-    header,
-    footer,
-    main {
-        width: 100%;
+    header {
+        width: @pageWidth;
     }
 
-
-
-    header .wrap {
+    .wrap {
+        .width();
         display: grid;
-        margin: 0 @marginHeader 0 @marginHeader;
+        justify-content: center;
         grid-template-columns: @logoWidth 1fr 1fr 1fr;
         grid-template-rows: repeat(2, 105px);
         grid-gap: 0px;
@@ -582,9 +578,9 @@
 
 
     main {
-        display: grid;
+        /*       display: grid;
         grid-template-rows: 640px repeat(6, auto);
-        grid-template-columns: 100%;
+        grid-template-columns: 1300px;*/
     }
 
     .ads {
@@ -599,7 +595,7 @@
             position: relative;
             width: 23vw;
             top: 190px;
-            left: 280px;
+            left: 480px;
             margin-bottom: 0.5rem;
 
         }
@@ -608,14 +604,15 @@
             position: relative;
             width: 18vw;
             top: 190px;
-            left: 334px;
+            left: 534px;
         }
     }
 
     .features {
         display: grid;
-        grid-template-rows: 360px;
+        grid-template-rows: 400px;
         grid-template-columns: repeat(4, 1fr);
+        .width();
 
         & article {
             padding: 75px 40px 0px 40px;
@@ -647,7 +644,8 @@
         grid-template-rows: 260px 300px 300px;
         grid-template-columns: 1fr 337px 1fr;
         grid-column-gap: 3.3rem;
-        .paddings();
+        //        .paddings();
+        .width();
         padding-top: 4.5rem;
 
         & article {
@@ -668,21 +666,27 @@
         }
     }
 
-    .achievements {
-        display: grid;
-        grid-template-rows: 595px;
-        grid-template-columns: repeat(4, 1fr);
-        align-items: center;
-        .paddings();
-        justify-items: center;
+    .achievments-wrap {
+        width: @pageWidth;
         background: url(../img/achivements-bg.png) repeat-x;
         background-color: #0081bb;
         background-position: center;
         background-blend-mode: soft-light;
     }
 
+    .achievements {
+        .width();
+        display: grid;
+        grid-template-rows: 595px;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: center;
+        //        .paddings();
+        justify-items: center;
+    }
+
     .howWeWorks {
-        .paddings();
+        .width();
         display: grid;
         grid-template-rows: auto 1fr 140px;
         grid-template-columns: repeat(3, 1fr);
@@ -714,22 +718,27 @@
             grid-area: readmore;
             justify-self: center;
         }
+    }
 
+    .gallery-wrap {
+        width: @pageWidth;
+        background: url(../img/gallery-bg.png) repeat-x;
+        background-color: #2fb39b;
+        background-position: center;
+        background-blend-mode: screen;
     }
 
     .gallery {
         min-height: 829px;
-        .paddings();
+        //        .paddings();
+        .width();
         display: grid;
         justify-content: center;
         grid-template-rows: repeat(3, 212px);
         grid-template-columns: repeat(3, 1fr);
         grid-row-gap: 36px;
         grid-column-gap: 2px;
-        background: url(../img/gallery-bg.png) repeat-x;
-        background-color: #2fb39b;
-        background-position: center;
-        background-blend-mode: screen;
+
 
         & .annotation {
             margin-bottom: 54px;
@@ -758,7 +767,7 @@
 
     .team {
         min-height: 829px;
-        .paddings();
+        //        .paddings();
         display: grid;
         justify-content: center;
         grid-template-rows: repeat(2, 341px);
@@ -791,18 +800,25 @@
     }
 
     footer {
-        display: grid;
-        grid-template-rows: 176px 1fr 130px;
-        grid-template-columns: @paddingsRL repeat(4, 1fr) @paddingsRL;
-        grid-template-areas:
-            "offer offer offer offer offer offer"
-            ". address nav services enquiry . "
-            ". . copyright copyright . .";
+        width: @pageWidth;
+    }
 
-        & .offer {
-            grid-area: offer;
-            color: #494949;
-        }
+    .offer {
+        color: #494949;
+        height: 150px;
+    }
+
+    .footer {
+        display: grid;
+        justify-items: center;
+         .width();
+        grid-template-rows: 1fr 130px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "address nav services enquiry "
+            " . copyright copyright . ";
+
+
 
         & address {
             grid-area: address;
@@ -835,7 +851,7 @@
             }
 
             & input[type="tel"] {
-                margin-bottom: 50px;
+                margin-bottom: 0px;
             }
 
             & input[type="text"] {
@@ -848,26 +864,27 @@
             }
 
             & input[type="submit"] {
-                color: #fff;
-                font-size: 1rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                width: 7.5rem;
-                height: 2.5rem;
-                border-radius: 1.5rem;
-                border: 0px;
-                box-shadow: 0 0px 0px 0px #0087be;
-                background-color: #0087be;
-                text-align: center;
-                line-height: 0;
-                text-decoration: none;
-                display: inline-block;
+                         color: #fff;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    width: 7.5rem;
+                    height: 2.5rem;
+                    border-radius: 1.5rem;
+                    border: 0px;
+                    box-shadow: 0 0px 0px 0px #0087be;
+                    background-color: #0087be;
+                    text-align: center;
+                    line-height: 0;
+                    text-decoration: none;
+                    display: inline-block;
             }
 
         }
 
         & .copyright {
             grid-area: copyright;
+            align-self: center;
         }
 
         & address,
@@ -881,4 +898,310 @@
                 margin-bottom: 75px;
             }
         }
+    }
+
+
+
+    @media all and (min-width: 970px) and (max-width: 1299px) {
+
+        @logoWidth-ms: 300px;
+        @marginHeader-ms: 220px;
+        @paddingsRL-ms: 220px;
+        @pageWidth-ms: 100%;
+        @doctorImg-ms: 200px;
+
+        html,
+        body {
+            font-size: 16px;
+            }
+
+        .width() {
+            width: 970px;
+            margin: 0 auto;
+        }
+
+        .wrap {
+            .width();
+            grid-template-columns: @logoWidth-ms 1fr 1fr 1fr;
+            grid-template-rows: repeat(2, 105px);
+            grid-template-areas:
+                "logo worktime address phone "
+                "nav  nav       nav      nav ";
+        }
+
+        .logo img {
+            width: 152px;
+        }
+
+        .features {
+            .width();
+
+            & article {
+                padding: 55px 30px 0px 30px;
+                background-position: center 40px;
+            }
+
+            & article h2 {
+                margin-top: 120px;
+            }
+        }
+
+        .chooseUs {
+            grid-template-columns: 1fr 249px 1fr;
+            grid-column-gap: 3.3rem;
+            .width();
+            padding-top: 2.5rem;
+
+
+            & article:nth-child(1) {
+                grid-row: 1/span 1;
+                grid-column: 1/span 3;
+                padding: 0px 20% 0 20%;
+                text-align: center;
+            }
+
+            & div {}
+        }
+
+        .achievements {
+            .width();
+
+            & section {
+                line-height: 1.0rem;
+                padding-top: 3.5rem;
+
+                & h3 {
+                    font-size: 2rem;
+                }
+
+                & div {
+                    font-size: .8rem;
+                    font-weight: 700;
+                }
+
+            }
+
+            & hr {
+                height: 3px;
+            }
+        }
+
+        .howWeWorks {
+            .width();
+            grid-template-rows: auto auto 1fr auto 140px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "headWide headWide"
+                "headNarrow headNarrow "
+                "article1 article2"
+                "accordeon accordeon"
+                "readmore  readmore  ";
+            grid-row-gap: 32px;
+            grid-column-gap: 12px;
+
+            & .headWide {
+                padding-top: 58px;
+            }
+
+            & .headNarrow {
+                padding-top: 58px;
+            }
+
+
+        }
+
+        .gallery {
+            .width();
+            grid-template-rows: repeat(4, 220px);
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 16px;
+            grid-column-gap: 2px;
+            padding-bottom: 50px;
+
+
+            & .annotation {
+                margin-bottom: 54px;
+            }
+
+            & .head {
+                grid-column: 1/span 2;
+                text-align: center;
+                align-self: center;
+
+                & h1 {
+                    margin-top: 95px;
+                    margin-bottom: 38px;
+                }
+
+            }
+
+            & img {
+                display: block;
+                height: 210px;
+                width: 345px;
+                object-fit: cover;
+                justify-self: center;
+            }
+        }
+
+        .team {
+            padding-top: 30px;
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: repeat(2, 279px);
+            grid-row-gap: 28px;
+
+
+            & .head {
+                grid-column: 1/span 2;
+            }
+
+            & img {
+
+                width: @doctorImg-ms;
+                height: @doctorImg-ms;
+            }
+
+        }
+
+        .offer {
+            background-color: #e2e2e2;
+            text-align: center;
+            padding-top: 35px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            height: 100px;
+
+            & button {
+                font-family: "Lato-Bold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular", sans-serif;
+                color: #fff;
+                font-size: 1.0rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                width: 122px;
+                height: 34px;
+                border-radius: 17px;
+                border: 0px;
+                box-shadow: 5px 5px 5px 5px #d2d2d2;
+                background-color: #0087be;
+                text-align: center;
+                line-height: 0;
+                text-decoration: none;
+                display: inline-block;
+                margin-left: 2rem;
+            }
+        }
+
+        .footer {
+            .width();
+            
+            grid-template-rows: 1fr 1fr 130px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "services nav"
+                "address enquiry"
+                "copyright copyright";
+
+
+            & .enquiry {
+                grid-area: enquiry;
+                padding-left: 3rem;
+                justify-self: center; 
+
+                & input:not([type="submit"]),
+                textarea {
+                    width: 15rem;
+                    height: 3rem;
+                    border: 0px #171717;
+                    background-color: #171717;
+                    border-bottom: 2px solid #5f5f5f;
+
+
+                }
+
+                & input[type="tel"] {
+                    margin-bottom: 50px;
+                }
+
+                & input[type="text"] {
+                    margin-bottom: 15px;
+                    margin-top: -15px;
+                }
+
+                & textarea {
+                    margin-bottom: 15px;
+                }
+
+                & input[type="submit"] {
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    width: 7.5rem;
+                    height: 2.5rem;
+                    border-radius: 1.5rem;
+                    border: 0px;
+                    box-shadow: 0 0px 0px 0px #0087be;
+                    background-color: #0087be;
+                    text-align: center;
+                    line-height: 0;
+                    text-decoration: none;
+                    display: block;
+                }
+
+            }
+
+            & .copyright {
+                grid-area: copyright;
+                align-self: center;
+                justify-self:center; 
+            }
+
+            & address,
+            .enquiry,
+            nav,
+            .services {
+
+                & h3,
+                .h3 {
+                    margin-top: 114px;
+                    margin-bottom: 75px;
+                }
+            }
+        }
+
+    }
+
+    @media all and (max-width: 969px) {
+
+        @logoWidth-xs: 200px;
+        @marginHeader-xs: 220px;
+        @paddingsRL-xs: 220px;
+        @pageWidth-xs: 100%;
+        @doctorImg-xs: 279px;
+
+        html,
+        body {
+            background-color: aquamarine;
+            ont-size: 20px;
+        }
+
+        .width() {
+            width: 750px;
+            margin: 0 auto;
+        }
+
+        .wrap {
+            .width();
+            grid-template-columns: @logoWidth-xs 1fr 1fr 1fr;
+            grid-template-rows: repeat(2, 105px);
+            grid-template-areas:
+                "logo worktime address phone "
+                "nav  nav       nav      nav ";
+        }
+
+        .logo img {
+            width: 152px;
+        }
+
     }
