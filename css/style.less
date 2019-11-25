@@ -1,5 +1,4 @@
-    @import 'bootstrap3/less/normalize.less';
-    @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
     @import url('https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap');
     @logoWidth: 400px;
     @marginHeader: 220px;
@@ -466,9 +465,9 @@
         }
     }
 
-    header .phone div {
+    header .phone div:hover, header .logo:hover {
         animation-duration: 1s;
-        animation-delay: 4s;
+        animation-delay: 0.2s;
         animation-iteration-count: 1;
     }
 
@@ -902,7 +901,7 @@
 
 
 
-    @media all and (min-width: 970px) and (max-width: 1299px) {
+    @media all and (max-width: 1299px) {
 
         @logoWidth-ms: 300px;
         @marginHeader-ms: 220px;
@@ -1168,40 +1167,6 @@
                     margin-bottom: 75px;
                 }
             }
-        }
-
-    }
-
-    @media all and (max-width: 969px) {
-
-        @logoWidth-xs: 200px;
-        @marginHeader-xs: 220px;
-        @paddingsRL-xs: 220px;
-        @pageWidth-xs: 100%;
-        @doctorImg-xs: 279px;
-
-        html,
-        body {
-            background-color: aquamarine;
-            ont-size: 20px;
-        }
-
-        .width() {
-            width: 750px;
-            margin: 0 auto;
-        }
-
-        .wrap {
-            .width();
-            grid-template-columns: @logoWidth-xs 1fr 1fr 1fr;
-            grid-template-rows: repeat(2, 105px);
-            grid-template-areas:
-                "logo worktime address phone "
-                "nav  nav       nav      nav ";
-        }
-
-        .logo img {
-            width: 152px;
         }
 
     }
